@@ -1,4 +1,3 @@
-  //Exetcício de interpretação de código 1
 
 /*let array 
 console.log('a. ', array) // 'a.' fica indefinido
