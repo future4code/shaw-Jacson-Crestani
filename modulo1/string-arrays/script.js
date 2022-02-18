@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Exetcício de interpretação de código 1
+=======
+>>>>>>> 364fd7e1edf918a17cb3932546279aaed59b4f1f
 =======
 >>>>>>> 364fd7e1edf918a17cb3932546279aaed59b4f1f
 
@@ -75,6 +78,9 @@ const indice = prompt("Digite o indice da tarefa já realizada:")
 listaDeTarefas.splice(indice, 1)
 console.log(listaDeTarefas)*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 364fd7e1edf918a17cb3932546279aaed59b4f1f
 =======
 >>>>>>> 364fd7e1edf918a17cb3932546279aaed59b4f1f
