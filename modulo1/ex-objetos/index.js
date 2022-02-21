@@ -152,3 +152,5 @@ adicionaNoArray(objeto3)
 
 console.log(carrinho)
 */
+
+
