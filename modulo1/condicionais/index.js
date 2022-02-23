@@ -111,7 +111,7 @@ imprimeTurno(horario)
 
 
 //Exercícios de escrita de código 4
-/*
+
 const genero = prompt("Digite o genero do filme:")
 const precoIngresso = Number(prompt("digite o valor do ingresso"))
 function cinema() {
@@ -123,7 +123,7 @@ function cinema() {
 
 }
 cinema()
-*/
+
 
 
 
