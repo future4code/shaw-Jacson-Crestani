@@ -4,40 +4,78 @@
 
 
 // EXERCÍCIO 01
+
 function retornaTamanhoArray(array) {
-   
+   return array.length
 }
 
 // EXERCÍCIO 02
-function retornaArrayInvertido(array) {
-  
-}
 
+
+function retornaArrayInvertido(array) {
+    return array.reverse();
+
+}
+ 
 // EXERCÍCIO 03
+
+//let array = [36,12,56,7,3];
 function retornaArrayOrdenado(array) {
-  
+  function compararNumeros(a, b) {
+  return a - b;
+}
+    return array.sort(compararNumeros);
 }
 
 // EXERCÍCIO 04
+
+//let array =  [1,2,3,4,5,6,7,8]
 function retornaNumerosPares(array) {
-  
+  let arrayPares = [];
+    for(let i = 0; i <= array.length; i++){      
+     if (array[i] % 2 === 0);
+    arrayPares.push(array[i]);
+    }
+    return arrayPares
 }
 
 // EXERCÍCIO 05
+//let array = [1, 2, 3, 4, 5, 6]
 function retornaNumerosParesElevadosADois(array) {
- 
+    let arrayPares = []
+    for(let i = 0; i <= array.length; i++){      
+     if (array[i] % 2 === 0)
+    arrayPares.push(array[i] * array[i])
+    }
+    return arrayPares
 }
 
 // EXERCÍCIO 06
+//let array = [1,2,3,4,5,6,7]
 function retornaMaiorNumero(array) {
-  
+    let maiorNumero = 0
+  for(let i = 0; i <= array.length; i++) {
+    if (array[i] > maiorNumero)
+    maiorNumero = array[i]
+  }
+  return maiorNumero
 }
-
+//console.log(maiorNumero)
 // EXERCÍCIO 07
+
+let num1 = 15
+let num2 = 30
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+    let maiorNumero = num1
+    let menorNumero = num2
+     maiorDivisivelPorMenor
+    if (num2 > num1){
+    maiorNumero = num2
+    menorNumero = num1
+    }
+    maiorDivisivelPorMenor = maiorNumero % menorNumero == 0
 }
-
+console.log(maiorDivisivelPorMenor)
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
    
