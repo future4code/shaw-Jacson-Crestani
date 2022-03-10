@@ -1,8 +1,48 @@
-.cor-do-texto {
-  color: #ff1493;
+body {
+  background-color: #9a5c47;
 }
 
-.loja {
-  color: #ff1493;
-  font-size: 25px;
+h1 {
+  color: #dbbe96;
+  text-align: center;
+  background-color: #6c825e;
+  border-radius: 80px;
+}
+
+h2 {
+  color: #dbbe96;
+  text-align: center;
+}
+
+#cor-inicial {
+  color: #dbbe96;
+  font-size: 20px;
+  background-color: #6c825e;
+  border-color: rgba(108, 130, 94, 0.945);
+  border-style: unset;
+  margin-right: 50px;
+}
+
+#cor-estoque {
+  color: #dbbe96;
+  font-size: 20px;
+  background-color: #6c825e;
+  border-color: rgba(108, 130, 94, 0.945);
+  border-radius: 20px;
+}
+
+#cor-produto {
+  color: #dbbe96;
+  font-size: 20px;
+  background-color: #6c825e;
+  border-color: rgba(108, 130, 94, 0.945);
+  border-radius: 6px;
+}
+
+div {
+  margin: 10vw;
+}
+
+a:hover {
+  background-color: #865e26;
 }
