@@ -1,66 +1,76 @@
-
 // // COMPARADORES
 // // Exercício 1------------------------------------------------------------------------------------
 
- //a-)Comparador de desigualdade a!==b 
- Exemplo:
+// //a-)Comparador de desigualdade a!==b
+// //Exemplo:
 
- //function checarDesigualdade(a, b) {
+// //function checarDesigualdade(a, b) {
 
-     //return `No comparador de desigualdade ${a}!==${b} é ${a !== b}`
-// }
- //console.log(checarDesigualdade(1, 3));
+// // return `No comparador de desigualdade ${a}!==${b} é ${a !== b}`
+// // }
+// //console.log(checarDesigualdade(1, 3));
 
- //b-)Compare a igualdade entre a===b
+// //b-)Compare a igualdade entre a===b
 
- //function checarIgualdade(a, b) {
-     //  Sua lógica aqui
-    // return `No comparador de desigualdade ${a}===${b} é ${a === b}`
- //}
-// console.log(checarIgualdade(8,5));
+// //function checarIgualdade(a, b) {
+// //Sua lógica aqui
+// //return `No comparador de desigualdade ${a}===${b} é ${a === b}`
+// //}
+// //console.log(checarIgualdade(8,5));
 
- //c-)Faça uma função chamada "verificaSeEMaior"
- //function verificaSeEMaior (a, b){
-    // return `No comparador se é maior ${a} > ${b}  é ${a > b}`
- //}
+//c-)Faça uma função chamada "verificaSeEMaior"
+//function verificaSeEMaior (a, b){
+// return `No comparador se é maior ${a} > ${b}  é ${a > b}`
+//}
 
- //console.log(verificaSeEMaior(321, 2156));
-
+//console.log(verificaSeEMaior(321, 2156));
 
 // // Exercício 2------------------------------------------------------------------------------------
 // //Escreva true or false para as comparações abaixo:
 // // exemplo 1>2 = false
- ////a-) 1==='1'= false
- /////b-) 1=='1'= true
- ////c-) 'a'==='b'= false
- ////d-) 'b'>'a'= true
- ////e-) 0!==null= true
-
+// //a-) 1==='1'= false
+// ///b-) 1=='1'= true
+// //c-) 'a'==='b'= false
+// //d-) 'b'>'a'= true
+// //e-) 0!==null= true
 
 // // CONDICIONAIS
 
 // // Exercício 3------------------------------------------------------------------------------------
-/*
+
  const cadastro = () => {
-     const usuario = []
-     let nomeDoUsuario = prompt(`Diga o seu nome`) 
-     let anoDeNascimento = prompt(`Digite o ano em que vocẽ nasceu`)
-     let senhaDoUsuario = prompt(`Digite sua senha`)
-     let nacionalidade = prompt(`Digite a sua nacionalidade`)
-     let idade = 2022 - anoDeNascimento
+     
+     const nome = prompt(`Diga o seu nome`) 
+     const anoDeNascimento = prompt(`Digite o ano em que vocẽ nasceu`)
+     const senha = prompt(`Digite sua senha`)
+     const nacionalidade = prompt(`Digite a sua nacionalidade`)
+     
+     const usuarios = [];
 
+     const usuario = {
+         nome: nome,
+         anoDeNascimento: anoDeNascimento,
+         senha: senha,
+         nacionalidade: nacionalidade
+     }
+
+     const idade = 2022 - usuario.anoDeNascimento
+     
+     if (idade <= 18) {
+         return "Usuário precisa ser maior de 18 anos."
+     }
+
+     if (usuario.senha.length < 6) {
+         return "No minimo 6 digitos!"
+     }
+
+     if (usuario.nacionalidade !== 'brasileira') {
+         return "Usuário precisa ter nacionalidade 'brasileira'."
+     }
+     usuarios.push(usuario)
     
-    if(idade >18 && senhaDoUsuario.length > 6 && nacionalidade === "brasileira" ){
-    usuario.push(nomeDoUsuario,idade,senhaDoUsuario, nacionalidade)
-    console.log("Você cumpre todos os requisitos");
-    }else{
-        console.log(`Não cumpre todos os requisitos!`);
-    }
-   
- console.log(usuario);
-
-
- }
+     return usuarios
+ };
  console.log(cadastro());
 
 // // Exercício 4-----------------------------------------------------------------------------------------------
@@ -84,7 +94,7 @@
 
 
 
- // Exercício 5----------------------------------------------------------------------------------------------------
+ // Exercício 5
 
  const primeiraDose = () => {
 
@@ -109,7 +119,7 @@
 
  LOOP+CONDICIONAL
 
-// // Exercício 6 -------------------------------------------------------------------------------------
+// // Exercício 6 
 
  const segundaDose = (nomeDoUsuario) => {
    const usuarios = [
@@ -134,10 +144,11 @@
 } 
 
  console.log(avisoAosAtrasados());
-*/
 
-// //  DESAFIO------------------------------------------------------------------------------------------
-/*
+
+
+// //  DESAFIO
+
 const usuarios = [
     {
         nome: "Artur",
@@ -165,8 +176,8 @@ const usuarios = [
     }
 
 ]
-*/
-/*
+
+
 const nome = prompt(`Digite seu nome`)
  const senha = prompt(`Digite sua senha`)
 
@@ -217,9 +228,9 @@ const loginDesafio = () => {
     let idade = 2022 - ano
 
 console.log(loginDesafio(novoObjeto));
-*/
 
-/*
+
+
 
 const primeiraDoseDesafio = () => {
 
@@ -244,9 +255,9 @@ const primeiraDoseDesafio = () => {
     }return usuarios
 }
 console.log(primeiraDoseDesafio())
-*/
 
-/*
+
+
 
 const segundaDoseDesafio = (nomeDoUsuario) => {
     const resultado = usuarios.map((item) => {
@@ -256,10 +267,9 @@ const segundaDoseDesafio = (nomeDoUsuario) => {
 }
 console.log(segundaDoseDesafio(prompt("ALGUM NOME AQUI")));
 
-*/
 
 
-*/
+
 
 const avisoAosAtrasadosDesafio = () => {
 
@@ -270,4 +280,4 @@ const avisoAosAtrasadosDesafio = () => {
     })
 }
 console.log(avisoAosAtrasadosDesafio());
-    */
+
