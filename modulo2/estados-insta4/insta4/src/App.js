@@ -9,11 +9,19 @@ const MainContainer = styled.div`
   align-items: center;
 `
 
+styled:{
+    pessoa:[
+      }
+          nomeUsuario={'paulinha'},
+          fotoUsuario={'https://picsum.photos/50/50'},
+          fotoPost={'https://picsum.photos/200/150'}
+    {
+  ]
+  }
 class App extends React.Component {
   render() {
     return (
-      <MainContainer>
-        <div>
+      <MainContainer> 
         <Post
           nomeUsuario={'paulinha'}
           fotoUsuario={'https://picsum.photos/50/50'}
@@ -31,8 +39,6 @@ class App extends React.Component {
           fotoUsuario={'https://picsum.photos/50/48'}
           fotoPost={'https://picsum.photos/200/151'}
         />
-
-        </div>
       </MainContainer>
     );
   }
