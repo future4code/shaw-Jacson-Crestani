@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
 
 class App extends React.Component {
   state = {
-    currentPage: "home"
+    currentPage: "home",
+    jobDetailId: ""
   }
 
 
@@ -26,21 +27,22 @@ class App extends React.Component {
     this.setState({currentPage: pageName})
   }
 
-  goToDetailPage
-
+  goToDetailPage = (jobId) => {
+    this.setState({currentPage: "detail", jobDetailId: jobId})
+  }
   
   choosePage = () => {
     switch(this.state.currentPage) {
       case "home":
         return <HomePage changePage={this.changePage} />
       case "list":
-        return <JobsListPage/>
+        return <JobsListPage goToDetailPage={this.goToDetailPage} />
       case "form":
         return <CreateJobPage/>
       case "cart":
         return<CartPage/>
       case "detail":
-        return <JobDetailPage/> 
+        return <JobDetailPage jobId={this.state.jobDetailId} /> 
       default:
         return <HomePage changePage={this.changePage} />
 

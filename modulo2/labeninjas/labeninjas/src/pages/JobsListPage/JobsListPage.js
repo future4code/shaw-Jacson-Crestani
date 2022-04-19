@@ -26,7 +26,7 @@ class JobsListPage extends React.Component {
 
   render() {
     const jobComponents = this.state.jobsList.map((job) => {
-      return <JobCard key={job.id} job={job} />;
+      return <JobCard key={job.id} job={job} goToDetailPage={this.props.goToDetailPage} />;
     });
 
     return <JobListContainer>
