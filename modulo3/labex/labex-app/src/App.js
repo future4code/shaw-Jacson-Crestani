@@ -1,12 +1,15 @@
 import React from "react";
-import { Router } from "react-router-dom";
+import { Router } from "./pages/routes/Router";
 
-const App = () => {
+
+ const App = () => {
+
   return (
-    <div>   
+    <div>
       <Router/>
     </div>
   );
 };
 
 export default App;
+ 
