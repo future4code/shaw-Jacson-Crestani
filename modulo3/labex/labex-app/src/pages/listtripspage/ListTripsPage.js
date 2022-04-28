@@ -16,9 +16,9 @@ export const ListTripsPage = () =>{
     return (
         <div>
             <h1>ListTripsPage</h1>
-
-            <button onClick={goToApplicationFormPage}>Ver Viagens</button>
-            <button onClick={goToHomePage}>Ver Viagens</button>
+            <button onChange={goToHomePage}>Home</button>
+            <button onChange={goToApplicationFormPage}>ApplicationFormPage</button>
+            
         </div>
     );
 }
