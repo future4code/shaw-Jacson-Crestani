@@ -1,9 +1,15 @@
 import React from "react";
+import { goBack } from "../../routes/coordinator";
+import { useNavigate } from "react-router-dom";
+
+
 
 const PostPage = () => {
+  const navigate = useNavigate();
   return (
     <div>
-      <h1>PostPage</h1>
+      PostPage
+      <button onClick={() => goBack(navigate)}>Voltar</button>
     </div>
   );
 };

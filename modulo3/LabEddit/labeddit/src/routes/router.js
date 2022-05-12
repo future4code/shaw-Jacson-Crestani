@@ -14,7 +14,7 @@ const Router = () => {
 
         <Route element={<CadastrePage />} path="/cadastre" />
 
-        <Route element={<FeedPage />} path="feed" />
+        <Route element={<FeedPage />} path="/feed" />
 
         <Route element={<PostPage />} path="/post/:id" />
 

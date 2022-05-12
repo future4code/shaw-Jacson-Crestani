@@ -1,72 +1,125 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 
 const CadastrePage = () => {
-  const [displayName, setDisplayName] = useState("");
+  //const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [usuario, setUsuario] = useState("");
 
-  const handleSubmit = (e) => {
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const onChangeUsuario = (e) => {
+    setUsuario(e.target.value);
+  };
+
+  /*const handleSubmit = (e) => {
     e.preventDefault();
-
-    setError("");
-
-    const user = {
-      displayName,
-      email,
-      password,
-  }
-
-  if (password !== confirmPassword) {
-    setError("As senhas devem ser iguais");
-    return;
-  }
-
-}
-
+  }*/
 
   return (
-    <div>
-      <h1>Cadastre-se</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Nome</span>
-          <input 
-          type="text" 
-          name="displayName" 
-          required placeholder="Nome do usuário" />
-          value={displayName}
-          onChange={(e) => setDisplayName(e.target.value)}
-        </label>
-        <label>
-          <span>E-mail</span>
-          <input type="email" 
-          name="email" 
-          required placeholder="E-mail do usuário" />
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        </label>
-        <label>
-          <span>Senha</span>
-          <input type="password" 
-          name="password" 
-          required placeholder="Insira sua senha" />
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        </label>
-        <label>
-          <span>Confirmação de Senha</span>
-          <input type="password" 
-          name="confirmPassword" 
-          required placeholder="Confirme sua senha" />
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        </label>
-        <button className="btn">Cadastrar</button>
-      </form>
-    </div>
+  
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Box component="form" /*onSubmit={apiLogin}*/ noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="usuario"
+              label="usuario"
+              name="usuario"
+              autoComplete="usuario"
+              autoFocuson
+              onChange={onChangeUsuario}
+              value={usuario}
+            />
+
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email"
+              name="email"
+              autoComplete="email"
+              autoFocuson
+              onChange={onChangeEmail}
+              value={email}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="senha"
+              label="Digite sua senha"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={onChangePassword}
+              value={password}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Lembrar-me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item>
+                <Link
+                  //onClick={() => goToCadastre(navigate)}
+                  href=""
+                  variant="body2"
+                >
+                  {"Cadastre-se"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+      </Container>
   );
 };
 
