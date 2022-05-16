@@ -66,19 +66,24 @@ catch(error){
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            backgroundColor:  "#fafafa",
+            padding: "20px",
+            borderRadius: "10px",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main",
+          
+           }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Login
           </Typography>
           <Box
             component="form"
            onSubmit={apiLogin}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ mt: 1, }}
           >
             <TextField
               margin="normal"
@@ -112,9 +117,11 @@ catch(error){
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 5,
+               mb: 2, 
+               }}
             >
-              Sign In
+              Entrar
             </Button>
             <Grid container>
               <Grid item>

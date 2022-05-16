@@ -1,9 +1,11 @@
 import React from "react";
 
+
+
 const ErrorPage = () => {
   return (
     <div>
-      <h1>ErrorPage</h1>
+      <h1>ErroRude</h1>
     </div>
   );
 };

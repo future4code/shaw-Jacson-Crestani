@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,8 +15,7 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 
 const CadastrePage = () => {
-  //const navigate = useNavigate();
-
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [usuario, setUsuario] = useState("");
@@ -50,12 +48,10 @@ const CadastrePage = () => {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main",  }}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
+          Cadastre-se
           <Box component="form" /*onSubmit={apiLogin}*/ noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -104,16 +100,15 @@ const CadastrePage = () => {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+             Cadastrar
             </Button>
             <Grid container>
               <Grid item>
                 <Link
-                  //onClick={() => goToCadastre(navigate)}
                   href=""
                   variant="body2"
                 >
-                  {"Cadastre-se"}
+                  {"Esqueceu sua senha?"}
                 </Link>
               </Grid>
             </Grid>
