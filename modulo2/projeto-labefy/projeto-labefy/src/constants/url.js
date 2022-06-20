@@ -1,0 +1,1 @@
+export const BASE_URL = 'SpotifyUserAPIserg-osipchukV1.p.rapidapi.com';
