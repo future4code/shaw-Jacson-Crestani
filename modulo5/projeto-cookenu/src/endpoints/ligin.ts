@@ -7,11 +7,11 @@ import { HashManager } from "../services/HashManager";
 
 
 
-export async function signup(req: Request, res: Response) {  // cria um usuário
+export async function login(req: Request, res: Response) {  // cria um usuário
   try {
-    const { name, email, password, } = req.body;  // pega os dados do body
+    const { name, email, password, role } = req.body;  // pega os dados do body
 
-    if (!name || !email || !password ) { // se não tiver nome, email, senha ou role, retorna erro
+    if (!email || !password) { // se não tiver nome, email, senha ou role, retorna erro
       res
         .status(422)
         .send(
@@ -22,26 +22,28 @@ export async function signup(req: Request, res: Response) {  // cria um usuário
     const userDatabase = new UserDatabase();   // cria um novo usuário
     const user = await userDatabase.findUserByEmail(email); // verifica se o email já existe
 
-    if (user) {
+    if (!user) { // se o email não existir, retorna erro
       res.status(409) // se o email já existir, retorna erro
         .send(
-          "Usuário já existe"
+          "Usuário não existe"
         );
     }
 
-    const idGenerator = new IdGenerator();  // gera um id para o usuário
-    const id = idGenerator.generate(); // gera um id para o usuário
-
     const hashManager = new HashManager(); // gera um hash para o password
-    const hashPassword = await hashManager.hash(password);
+    const isPasswordCorrect = await hashManager.compare(password, user.getPassword()); // verifica se o password é o mesmo do banco
 
-    const newUser = new User(id, name, email, hashPassword); // cria um usuário
-    await userDatabase.createUser(newUser);
+    if (!isPasswordCorrect) { // se o password não for o mesmo, retorna erro
+      res.status(401).send("Email ou senha incorretos") // se o email já existir, retorna erro
+    }
+
 
     const authenticator = new Authenticator() // gera um token para o usuário
-    const token = authenticator.generate({id, role});
+    const token = authenticator.generate({
+       id: user.getId(),
+       role: user.getRole(),
+       });  
 
-    res.status(200).send({ message: "Usuário criado com sucesso", token }); // retorna o token
+    res.status(200).send({ message: "Usuário logado com sucesso", token }); // retorna o token
   } catch (error) {
     res.status(400).send(error.message);
   }
