@@ -9,9 +9,9 @@ import { HashManager } from "../services/HashManager";
 
 export async function signup(req: Request, res: Response) {  // cria um usuário
   try {
-    const { name, email, password, } = req.body;  // pega os dados do body
+    const {name, email, password, role } = req.body;  // pega os dados do body
 
-    if (!name || !email || !password ) { // se não tiver nome, email, senha ou role, retorna erro
+    if (name || !email || !password || !role ) { // se não tiver nome, email, senha ou role, retorna erro
       res
         .status(422)
         .send(
@@ -35,7 +35,7 @@ export async function signup(req: Request, res: Response) {  // cria um usuário
     const hashManager = new HashManager(); // gera um hash para o password
     const hashPassword = await hashManager.hash(password);
 
-    const newUser = new User(id, name, email, hashPassword); // cria um usuário
+    const newUser = new User(id, name, email, hashPassword, role); // cria um usuário
     await userDatabase.createUser(newUser);
 
     const authenticator = new Authenticator() // gera um token para o usuário

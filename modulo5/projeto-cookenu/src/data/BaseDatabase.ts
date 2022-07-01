@@ -15,16 +15,3 @@ export class BaseDatabase {
 
 
 
-
-
-// METODO PARA CONECTAR AO BANCO DE DADOS E RETORNAR A CONEXÃO
-
-// import knex, { Knex } from "knex";
-// export class BaseDatabase {
-//   protected static connection: Knex = knex({
-//     client: "mysql",
-//     connection: {
-//       host: process.env.DB_HOST,
-//       port: 3306,
-//       user: process.env.DB_USER,
-

@@ -4,7 +4,7 @@ import { BaseDatabase } from "./BaseDatabase"
 export class UserDatabase extends BaseDatabase {
   public async createUser(user: User) {
     try {
-      await BaseDatabase.connection("lbm_user")
+      await BaseDatabase.connection("cadastro")
         .insert({
           id: user.getId(),
           name: user.getName(),
@@ -12,14 +12,14 @@ export class UserDatabase extends BaseDatabase {
           password: user.getPassword(),
           role: user.getRole(),
         });
-    } catch (error: any) {
+    } catch (error) {
       throw new Error(error.sqlMessage || error.message);
     }
 }
   
   public async findUserByEmail(email: string): Promise<User> {  
     try {
-      const user = await BaseDatabase.connection("lbm_user")
+      const user = await BaseDatabase.connection("cadastro")
       .select("*")
       .where({ email });       
       return user[0] && User.toUserModel(user[0]);
