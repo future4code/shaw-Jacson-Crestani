@@ -1,0 +1,14 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+	{
+		
+		"name" : "Jacson Crestani",
+		"email" : "jacson@gmail.com",
+		"password" : "123456",
+    "role": "NORMAL"
+	}
+
+###
+
+POST http://localhost:3003/user/login
