@@ -1,0 +1,23 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "matheus matuza", 
+   "nickname": "matuza", 
+   "email": "matuza@oscorp.com" ,
+   "password": "ihatepeter"
+}
+
+###
+
+@id = 0e7fce90-7d76-4204-96f5-534422b1a802
+   
+
+PUT http://localhost:3003/user/edit/{{id}}
+Content-Type: application/json
+
+{
+   "name": "mateus matuza" 
+}
