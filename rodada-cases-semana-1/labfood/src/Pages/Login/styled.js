@@ -2,25 +2,22 @@ import styled from 'styled-components';
 import { Button } from "@mui/material";
 import TextField  from "@mui/material/TextField";
 
-export const InputMaterial = styled(TextField)`
-  width: 100%;
-`
-export const IconButton = styled(Button)`
 
+export const IconButton = styled(Button)`
+  
 `
 export const Main = styled.div`
-  padding : 10px;
   width: 100%;
-  height: 100vh;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   p{
-    font-size: 2rem;
+    font-size: 1rem;
   }
 `
 
-export const From = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   height: 80%;
@@ -35,8 +32,11 @@ export const ButtonStyled = styled(Button)`
   }
 `
 
-export const DivPassword = styled.div`
+export const DivPass = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`
+export const InputMaterial = styled(TextField)`
+ width: 100%;
 `
